@@ -1,0 +1,25 @@
+.container{
+    color: rgb(39, 136, 136);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .logo{
+        width: 70px;
+        height: 70px;
+    }
+    .title{
+        font-weight: 550;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 900px){
+    .container{
+        .title{
+            display: none;
+        }
+    }
+}

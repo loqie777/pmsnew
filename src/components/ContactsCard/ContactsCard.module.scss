@@ -1,0 +1,22 @@
+.container{
+    height: 270px;
+    width: 270px;
+    border-radius: 15%;
+    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    .link{
+        text-decoration: none;
+        color: black;
+    }
+    .img{
+        height: 140px;
+        width: 140px;
+    }
+    .title{
+        font-weight: 700;
+    }
+}

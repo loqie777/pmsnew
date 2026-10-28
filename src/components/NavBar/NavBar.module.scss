@@ -1,0 +1,33 @@
+.container{
+    .link{
+        margin-right: 1.5vw;
+        text-decoration: none;
+        color: rgb(39, 136, 136);
+        position: relative;
+        font-size: clamp(14px, 15vw, 16px);
+        &:hover{
+            cursor: pointer;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(39, 136, 136);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        &:hover::after{
+            transform: scaleX(1);
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .container{
+        display: none;
+    }
+}

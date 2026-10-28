@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .title{
+        margin-bottom: 20px;
+        font-weight: 650;
+         font-size: 22px;
+    }
+
+    .frame{
+        width: 80vw;
+        height: clamp(300px, 30vw, 500px);
+    }
+}

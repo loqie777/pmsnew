@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .title{
+        font-weight: 650;
+        font-size: 20px;
+    }
+    .wholetext{
+        text-align: center;
+        margin-top: 20px;
+        max-width: 70%;
+        margin-bottom: 20px;
+    }
+    .moretext{
+        text-align: center;
+        margin-top: 20px;
+        max-width: 70%;
+        margin-bottom: 20px;
+    }
+    .btn{
+        color: white;
+        height: 40px;
+        width:170px;
+        border-radius: 10px;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: rgb(82, 87, 87);
+        transition: transform 200ms ease;
+
+        &:hover{
+            transform: translateY(-1px);
+            cursor: pointer;
+        }
+    }
+}

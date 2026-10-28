@@ -1,0 +1,31 @@
+.container{
+    height: 270px;
+    width: 270px;
+    border-radius: 15%;
+    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    .img{
+        height: 140px;
+        width: 140px;
+    }
+    .title{
+        text-align: center;
+    }
+    .btn{
+        color: white;
+        height: 40px;
+        width:170px;
+        border-radius: 10px;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: rgb(82, 87, 87);
+        transition: transform 200ms ease;
+
+        &:hover{
+            transform: translateY(-1px);
+            cursor: pointer;
+        }
+    }
+}
