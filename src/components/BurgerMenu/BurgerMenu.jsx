@@ -1,15 +1,18 @@
 import React from "react";
 import st from './BurgerMenu.module.scss';
 
-
-
-const BurgerMenu = ({onClick}) => {
-    return(
-        <div className={st.container} onClick={onClick}>
-            <img src="/img/menu-svgrepo-com.png" className={st.menuimg}/>
-        </div>
-    )
-}
-
+const BurgerMenu = ({ onClick, isOpen }) => {
+  return (
+    <button 
+      className={`${st.burgerBtn} ${isOpen ? st.open : ''}`} 
+      onClick={onClick}
+      aria-label="Переключатель меню"
+    >
+      <span className={st.line}></span>
+      <span className={st.line}></span>
+      <span className={st.line}></span>
+    </button>
+  );
+};
 
 export default BurgerMenu;

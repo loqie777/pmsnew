@@ -1,28 +1,108 @@
-.container{
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 120px 0 80px 0; 
+  width: 100%;
+  box-sizing: border-box;
+
+  .bannerWrapper {
+    width: 90%;
+    max-width: 900px;
+    margin-bottom: 40px;
+    
+    .bimg {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+  }
+
+
+  .documentBox {
+    background-color: #f8f9fa;
+    border-left: 4px solid #e30613;
+    padding: 20px 24px;
+    border-radius: 0 12px 12px 0;
+    max-width: 900px;
+    width: 90%;
+    margin-bottom: 60px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    .link{
-        color: black;
-        margin-bottom: 50px;
-        text-align: center;
-    }
-    .bimg{
-        margin-bottom: 50px;
-        width: 50%;
-    }
-    .text{
-        margin-bottom: 50px;
-        text-align: center;
-    }
-}
+    gap: 6px;
+    box-sizing: border-box;
 
+    .docBadge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-@media(max-width:400px){
-    .container{
-        .bimg{
-            width: 75%;
+    .link {
+      color: #111827;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: color 0.2s ease;
+      display: inline-block;
+
+      .docArrow {
+        display: inline-block;
+        transition: transform 0.2s ease;
+        color: #e30613;
+      }
+
+      &:hover {
+        color: #e30613;
+        .docArrow {
+          transform: translateX(4px);
         }
+      }
     }
+  }
+
+  .titleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+
+    .text {
+      font-weight: 700;
+      font-size: 24px;
+      color: #111827;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    .line {
+      width: 50px;
+      height: 3px;
+      background-color: #00b47c;
+      border-radius: 2px;
+    }
+  }
+
+  .reportsList {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1050px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    
+    & > div:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
 }

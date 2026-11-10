@@ -1,31 +1,78 @@
 import React from "react";
 import st from './MyModal.module.scss';
-import { motion,AnimatePresence } from "framer-motion";
-import Logo from "../Logo/Logo";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router";
 
-const MyModal = ({visible,setVisible}) => {
 
-    return(
-        <div className={visible ? st.containerActive : st.container} onClick={() => setVisible(!visible)}>
-            <div className={st.modalContainer} onClick={(e) => e.stopPropagation()}>
-                <div className={st.linkContainer}>
-                <Link className={st.link} to='/#services' onClick={() => setVisible(!visible)}>Услуги</Link>
-                <Link className={st.link} to="/#aboutus" onClick={() => setVisible(!visible)}>О нас</Link>
-                <Link className={st.link} to="/#contacts" onClick={() => setVisible(!visible)}>Контакты</Link>
-                <Link className={st.link} to="/#history" onClick={() => setVisible(!visible)}>История</Link>
-                <Link className={st.link} to='/news' onClick={() => setVisible(!visible)}>Новости</Link>
-                <Link className={st.link} to="/#vacancies" onClick={() => setVisible(!visible)}>Вакансии</Link>
-                <Link className={st.link} to="/#cometous" onClick={() => setVisible(!visible)}>Схема проезда</Link>
-                <Link className={st.link} to="/ideolog" onClick={() => setVisible(!visible)}>Идеологическая работа</Link>
-                <Link className={st.link} to="/land" onClick={() => setVisible(!visible)}>Благоустройство</Link>
-                <Link className={st.link} to="/sport" onClick={() => setVisible(!visible)}>Спорт</Link>
-                <Link className={st.link} to="/melioration" onClick={() => setVisible(!visible)}>Мелиорация</Link>
-                </div>
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+};
+
+
+const menuVariants = {
+  hidden: { x: "100%", transition: { type: "tween", duration: 0.3 } },
+  visible: { 
+    x: 0, 
+    transition: { 
+      type: "tween", 
+      duration: 0.3,
+      staggerChildren: 0.05, 
+      delayChildren: 0.1
+    } 
+  }
+};
+
+
+const linkVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 120 } }
+};
+
+const MyModal = ({ visible, setVisible }) => {
+  const closeMenu = () => setVisible(false);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div 
+          className={st.overlay}
+          variants={overlayVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          onClick={closeMenu}
+        >
+          <motion.div 
+            className={st.modalContainer}
+            variants={menuVariants}
+            onClick={(e) => e.stopPropagation()} 
+          >
+            <div className={st.linkContainer}>
+              {[
+                { to: "/#services", label: "Услуги" },
+                { to: "/#aboutus", label: "О нас" },
+                { to: "/#contacts", label: "Контакты" },
+                { to: "/#history", label: "История" },
+                { to: "/news", label: "Новости" },
+                { to: "/#vacancies", label: "Вакансии" },
+                { to: "/ideolog", label: "Идеологическая работа" },
+                { to: "/land", label: "Благоустройство" },
+                { to: "/sport", label: "Спорт" },
+                { to: "/melioration", label: "Мелиорация" }
+              ].map((item, index) => (
+                <motion.div variants={linkVariants} key={index}>
+                  <Link className={st.link} to={item.to} onClick={closeMenu}>
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
             </div>
-        </div>
-    )
-}
-
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default MyModal;

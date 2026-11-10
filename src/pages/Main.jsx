@@ -30,23 +30,14 @@ const Main = () => {
         <div className={st.page}>
             <Header/>
             <Slider/>
-            <Services id={"services"}/>
-            <hr className={st.line}/>
             <AboutUs id={'aboutus'}/>
-            <hr className={st.line}/>
+            <Services id={"services"}/>
             <Contacts id={"contacts"}/>
-            <hr className={st.line}/>
             <PeopleAccept/>
             <NewsModule/>
-            <hr className={st.line}/>
             <History/>
-            <hr className={st.line}/>
             <Vacancies id={"vacancies"}/>
-            <hr className={st.line}/>
             <FeedBack id = {'feedback'}/>
-            <hr className={st.line}/>
-            <ComeToUs id={"cometous"}/>
-            <hr className={st.line}/>
              <Footer/>
         </div>
     )

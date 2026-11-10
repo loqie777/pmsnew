@@ -1,14 +1,120 @@
-.container{
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  padding: 90px 0;
+  width: 100%;
+
+  .titleWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
+
+    .title {
+      font-weight: 700;
+      font-size: 32px;
+      color: #111827;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .line {
+      width: 50px;
+      height: 3px;
+      background-color: #00b47c;
+      border-radius: 2px;
+    }
+  }
+
+  .mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Левая часть чуть Уже, правая с картой — шире */
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr; /* На мобильных карта упадет под текст */
+      gap: 35px;
+    }
+  }
+
+  .infoSide {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     justify-content: center;
-    .img{
-        width: 100px;
-        height: 100px;
+
+    .contactItem {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #ffffff;
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.01);
+      border: 1px solid #f0f2f5;
+
+      .iconCircle {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background-color: #e6f7f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+
+      .textBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .label {
+          font-size: 13px;
+          color: #9ca3af;
+          font-weight: 500;
+        }
+
+        .value {
+          font-size: 16px;
+          color: #374151;
+          font-weight: 600;
+        }
+
+        .valueLink {
+          font-size: 16px;
+          color: #00b47c;
+          font-weight: 600;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
-    .link{
-        color: black;
-        text-decoration: none;
+  }
+
+  .mapSide {
+    width: 100%;
+    height: 380px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eef0f2;
+
+    .frame {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
+  }
 }

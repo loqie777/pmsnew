@@ -1,7 +1,34 @@
-.container{
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Чистый белый фон хедера/галереи */
+  padding: 120px 0 80px 0; /* Отрегулировали отступ сверху под Header */
+  width: 100%;
+  box-sizing: border-box;
+
+  .titleWrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .title {
+      font-weight: 700;
+      font-size: 32px;
+      color: #111827;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    .line {
+      width: 50px;
+      height: 3px;
+      background-color: #00b47c;
+      border-radius: 2px;
+    }
+  }
 }

@@ -6,7 +6,7 @@ const vacancies = [
 {
     name: 'Газоэлектросварщик',
     img: 'free-icon-technician-removebg-preview.png'
-}
+},
 // {
 //     name: 'Трактористы различных специальностей',
 //     img: 'Screenshot_159-removebg-preview.png'

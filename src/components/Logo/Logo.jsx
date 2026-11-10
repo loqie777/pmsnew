@@ -7,7 +7,7 @@ const Logo = () => {
 
     return(
         <div className={st.container} onClick={() => navigate('/')}>
-            <img src="/img/gerb.jpg" className={st.logo} />
+            <img src="/img/gerb.png" className={st.gerb} />
             <img src="/img/logo.png" alt="logo" className={st.logo} />
             <span className={st.title}>УП "Ляховичское ПМС"</span>
         </div>

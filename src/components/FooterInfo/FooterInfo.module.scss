@@ -1,47 +1,70 @@
-.container{
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+  text-align: left; /* Выравнивание по левому краю считывается намного легче */
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* На мобильных колонки встанут друг под друга */
+    gap: 25px;
+  }
+
+  .column {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 5vw;
-
-    .block1{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 10px;
-        .link{
-            text-decoration: none;
-            color: black;
-        }
+    flex-direction: column;
+    
+    .colTitle {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e6f7f2; /* Легкое зеленое подчеркивание заголовков колонок */
     }
 
-    .block2{
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+    .receptionBlock {
+      margin-bottom: 10px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
-    .block3{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        flex-direction: column;
-    }
-    .text{
-        text-align: center;
-    }
-}
+    .text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin: 0 0 8px 0;
 
-
-@media(max-width: 700px){
-    .container{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      strong {
+        color: #111827;
+        font-weight: 600;
+      }
     }
+
+    .subText {
+      font-size: 13.5px;
+      color: #00b47c; /* Время приема выделим фирменным зеленым цветом */
+      font-weight: 600;
+      margin: 2px 0 0 0;
+    }
+
+    .weekend {
+      color: #9ca3af;
+      font-weight: 500;
+    }
+
+    .link {
+      color: #00b47c;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

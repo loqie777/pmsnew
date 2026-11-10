@@ -1,0 +1,37 @@
+.container{
+    .linkbtn{
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 8px;
+    background-color: rgb(33, 180, 124);
+    transition: all .3s ease;
+        text-decoration: none;
+        .text{
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+
+        &:hover{
+        transform: translateY(-1px);
+        background-color: rgb(28, 128, 90);
+    }
+
+        &:active{
+            transform: scale(0.98);
+        }
+    }
+
+}
+
+
+@media(max-width: 700px){
+    .container{
+        display: none;
+    }
+}

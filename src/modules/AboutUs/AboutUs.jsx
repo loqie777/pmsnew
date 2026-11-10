@@ -1,22 +1,84 @@
 import React from "react";
 import st from './AboutUs.module.scss';
 import { motion } from "framer-motion";
+import CountUp from "react-countup"; // Библиотека для бегущих цифр
+import { useInView } from "react-intersection-observer"; // Хук отслеживания скролла
 
+const AboutUs = ({ id }) => {
 
-const AboutUs = ({id}) => {
-    return(
-        <motion.div className={st.container} id={id}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.1 }} >
-            <div className={st.textContainer}>
-                <span className={st.title}>УП "Ляховичское ПМС"</span>
-                <p className={st.text}>современное предприятие,основными видами деятельности которого являются строительство, ремонт и обслуживание мелиоративных систем, сооружений. Предприятие имеет в составе обширный автопарк со специальной и строительной техникой, оборудование.Для обеспечения проектных норм осушения земель на территории района используется сложный комплекс гидротехнических и других сооружений (каналы,дамбы,шлюзы-регуляторы,трубы-регуляторы,насосные станции), который включает 1 308 км каналов и водоприёмников, 4 743 сооружений, из них 30 мостов, 17 шлюзов-регуляторов, 242 труб-регуляторов, 504 труб-переездов, 317 колодцев различного функционального назначения, 3 633 устьев коллекторов. Кроме того, функционируют 5 319 км закрытых дренажных коллекторов и дрен,5 насосных станций, 159 км эксплуатационных дорог, 100 км дамб, 5 прудов и водохранилищ</p>
+  const { ref, inView } = useInView({
+    triggerOnce: true, 
+    threshold: 0.2,
+  });
+
+  return (
+    <motion.div 
+      className={st.container} 
+      id={id}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1 }}
+    >
+
+      <div className={st.textContainer}>
+        <span className={st.subTitle}>О ПРЕДПРИЯТИИ</span>
+        <h2 className={st.title}>УП "Ляховичское ПМС"</h2>
+        <p className={st.text}>
+          Современное высокотехнологичное предприятие, обеспечивающее 
+          плановый ремонт и техническое обслуживание сложных мелиоративных 
+          систем и гидросооружений.
+        </p>
+
+    
+        <div className={st.statsContainer} ref={ref}>
+          <div className={st.statItem}>
+            <div className={st.number}>
+              {inView ? (
+                <CountUp 
+                  start={0} 
+                  end={1308} 
+                  duration={2.5} 
+                  separator=" " 
+                  suffix=" км" 
+                />
+              ) : (
+                "0 км"
+              )}
             </div>
-            <img src="/img/aboutus.jpg" className={st.img} />
-        </motion.div>
-    )
+            <div className={st.label}>Каналов на обслуживании</div>
+          </div>
+          
+          <div className={st.statItem}>
+            <div className={st.number}>
+              {inView ? (
+                <CountUp 
+                  start={0} 
+                  end={4743} 
+                  duration={2.5} 
+                  separator=" " 
+                />
+              ) : (
+                "0"
+              )}
+            </div>
+            <div className={st.label}>Гидросооружений эксплуатируется</div>
+          </div>
+        </div>
+      </div>
+
+  
+      <div className={st.directorCard}>
+        <div className={st.imgWrapper}>
+          <img src="/img/aboutus.jpg" alt="Юшкевич Сергей Викентьевич" className={st.img} />
+        </div>
+        <div className={st.cardFooter}>
+          <div className={st.name}>Юшкевич Сергей Викентьевич</div>
+          <div className={st.position}>Директор предприятия</div>
+        </div>
+      </div>
+    </motion.div>
+  );
 }
 
 export default AboutUs;

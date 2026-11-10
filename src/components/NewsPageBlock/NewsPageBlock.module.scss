@@ -1,0 +1,85 @@
+.newsRow {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #edf0f2;
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  /* Выравниваем по верхнему краю, чтобы контент не прыгал из-за разной высоты картинок */
+  align-items: flex-start; 
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 25px;
+  }
+
+  .imgWrapper {
+    width: 320px; /* Фиксируем ширину левой колонки для аккуратности ряда */
+    height: auto;  /* Высота теперь полностью подстраивается под пропорции фото */
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0; /* Запрещаем сжатие блока картинки */
+    background-color: transparent;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .img {
+      width: 100%;
+      height: auto; /* Картинка сохраняет свой оригинальный Aspect Ratio на 100% */
+      display: block;
+      /* Отключаем любой принудительный кадрирующий фит */
+      object-fit: fill; 
+      transition: transform 0.4s ease;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2px;
+    flex-grow: 1;
+
+    .date {
+      font-size: 13px;
+      font-weight: 600;
+      color: #00b47c;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 21px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 12px 0;
+      line-height: 1.35;
+      transition: color 0.3s ease;
+    }
+
+    .text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555e6d;
+      margin: 0;
+      /* Текст развернут полностью */
+      display: block; 
+      overflow: visible;
+    }
+  }
+
+  &:hover {
+    .imgWrapper .img {
+      transform: scale(1.02); /* Легкий аккуратный зум */
+    }
+
+    .content .title {
+      color: #00b47c;
+    }
+  }
+}
