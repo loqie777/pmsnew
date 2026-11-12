@@ -32,7 +32,7 @@
 
   .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     max-width: 1200px;
     width: 100%;
@@ -42,7 +42,7 @@
   }
 }
 
-/* Медиазапросы для адаптивности */
+
 @media (max-width: 1024px) {
   .center {
     .container {

@@ -37,7 +37,7 @@ const AboutUs = ({ id }) => {
               {inView ? (
                 <CountUp 
                   start={0} 
-                  end={1308} 
+                  end={1309} 
                   duration={2.5} 
                   separator=" " 
                   suffix=" км" 
@@ -54,7 +54,7 @@ const AboutUs = ({ id }) => {
               {inView ? (
                 <CountUp 
                   start={0} 
-                  end={4743} 
+                  end={878} 
                   duration={2.5} 
                   separator=" " 
                 />

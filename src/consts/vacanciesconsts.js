@@ -5,16 +5,19 @@ const vacancies = [
 // },
 {
     name: 'Газоэлектросварщик',
-    img: 'free-icon-technician-removebg-preview.png'
+    // img: 'free-icon-technician-removebg-preview.png'
+    img: "welder.png"
 },
-// {
-//     name: 'Трактористы различных специальностей',
-//     img: 'Screenshot_159-removebg-preview.png'
-// },
-// {
-//     name: 'Машинист экскаватора',
-//     img: 'Screenshot_162-removebg-preview.png'
-// }
+{
+    name: 'Механик',
+    // img: 'Screenshot_159-removebg-preview.png'
+    img: "mechanic.png"
+},
+{
+    name: 'Водитель',
+    // img: 'Screenshot_162-removebg-preview.png'
+    img: "driver.png"
+}
 ];
 
 
